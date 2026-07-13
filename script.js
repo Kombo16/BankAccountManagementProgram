@@ -1,9 +1,13 @@
-class BankAccount{
-    static noOfAccounts = 0;
+export class BankAccount{
+    //static noOfAccounts = 0;
     constructor() {
         this.balance = 0;
         this.transactions = [];
-        noOfAccounts++;
+        //noOfAccounts++;
+    }
+    //transactions
+    addTransactions(type, amount) {
+        return this.transactions.push({type: type, amount: amount})
     }
     //deposit
     deposit(amount) {
@@ -23,10 +27,7 @@ class BankAccount{
         }
         else return "Insufficient balance or invalid amount."
     }
-    //transactions
-    addTransactions(type, amount) {
-        return this.transactions.push({type: type, amount: amount})
-    }
+    
     //Checking balance
     checkBalance() {
         return `Current balance: ${this.balance}`
