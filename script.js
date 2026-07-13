@@ -1,18 +1,15 @@
 export class BankAccount{
-    //static noOfAccounts = 0;
+    static accountsCreated = 0;
     constructor() {
+        BankAccount.accountsCreated++;
+        this.accountId = BankAccount.accountsCreated;
         this.balance = 0;
         this.transactions = [];
-        //noOfAccounts++;
-    }
-    //transactions
-    addTransactions(type, amount) {
-        return this.transactions.push({type: type, amount: amount})
     }
     //deposit
     deposit(amount) {
         if (amount > 0) {
-            addTransactions("deposit",amount);
+            this.addTransactions("deposit", amount);
             this.balance += amount;
             return `Successfully deposited $${amount}. New balance: $${this.balance}`
         }
@@ -21,13 +18,16 @@ export class BankAccount{
     //withdraw
     withdraw(amount) {
         if (amount <= this.balance && amount > 0) {
-            addTransactions("withdraw",amount);
+            this.addTransactions("withdraw", amount);
             this.balance -= amount;
             return `Successfully withdrew $${amount}. New balance: $${this.balance}`
         }
         else return "Insufficient balance or invalid amount."
     }
-    
+     //transactions
+    addTransactions(type, amount) {
+        this.transactions.push({type: type, amount: amount})
+    }
     //Checking balance
     checkBalance() {
         return `Current balance: ${this.balance}`
@@ -37,12 +37,12 @@ export class BankAccount{
         const deposits = this.transactions.filter(transaction=>transaction.type===name).map(deposit=>{
             return deposit.amount;
         }).toString();
-        return `Deposits: ${deposits}`
+        return (deposits) ? `Deposits: ${deposits}` : `No deposits made`
     }
     listAllWithdrawals(name="withdraw"){
          const withdrawals = this.transactions.filter(transaction=>transaction.type===name).map(withdrawal=>{
             return withdrawal.amount;
         }).toString();
-        return `Withdrawals: ${withdrawals}`
+        return (withdrawals) ? `Withdrawals: ${withdrawals}` : `No withdrawals made`
     }
 }

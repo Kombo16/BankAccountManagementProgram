@@ -3,16 +3,16 @@ import { BankAccount } from "./script.js";
 const bkAcc1 = new BankAccount();
 console.log(bkAcc1);
 
-
 const bkAcc2 = new BankAccount();
+console.log(bkAcc2)
 
 //Depositing
-bkAcc1.deposit(2300);
-bkAcc1.deposit(3434);
+console.log(bkAcc1.deposit(2300));
+console.log(bkAcc1.deposit(3434));
 //Withdrawing
-bkAcc1.withdraw(2350);
-bkAcc2.withdraw(70);
+console.log(bkAcc1.withdraw(2350));
+console.log(bkAcc2.withdraw(70));
 
 //Listing
-bkAcc1.listAllDeposits()
-bkAcc1.listAllWithdrawals()
+console.log(bkAcc1.listAllDeposits())
+console.log(bkAcc1.listAllWithdrawals())
