@@ -12,7 +12,7 @@ export class BankAccount{
     //deposit
     deposit(amount) {
         if (amount > 0) {
-            addTransaction("deposit",amount);
+            addTransactions("deposit",amount);
             this.balance += amount;
             return `Successfully deposited $${amount}. New balance: $${this.balance}`
         }
@@ -21,7 +21,7 @@ export class BankAccount{
     //withdraw
     withdraw(amount) {
         if (amount <= this.balance && amount > 0) {
-            addTransaction("withdraw",amount);
+            addTransactions("withdraw",amount);
             this.balance -= amount;
             return `Successfully withdrew $${amount}. New balance: $${this.balance}`
         }
