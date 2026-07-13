@@ -1,7 +1,7 @@
 # Bank Account Management Program
 My own implementation of freeCodeCamp's Bank Account Management Program.
 
-This is a lesson that teaches users on how to use and manipulate classes in the mowst interactive way possible.
+This is a lesson that teaches users on how to use and manipulate classes in the most interactive way possible.
 ## User Stories:
 1. You should define a class named `BankAccount` with a constructor. The constructor should set the default `balance` to `0` and initialize an empty array named `transactions` to store transaction records as objects.
 2. Each transaction stored in the `transactions` array should be an object with two properties: `type` and `amount`. The type property should be either `deposit` or `withdraw`, and the `amount` property should be the amount deposited or withdrawn.
